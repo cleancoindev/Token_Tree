@@ -114,6 +114,8 @@ contract NatureRegistry is INatureRegistry {
   function getResourceFromArea(string area, uint256 resourcePosition)
     public view returns (address, string, bool) {
 
+    require(resourcePosition < areas[area].length, "You did not call with a permitted position");
+
     return (
             areas[area][resourcePosition].resourceContract,
             areas[area][resourcePosition].resourceGeoPosition,

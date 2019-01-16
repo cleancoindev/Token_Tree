@@ -19,4 +19,14 @@ contract INatureRegistry {
 
   function toggleProtection(string area, uint256 resourcePosition) public;
 
+
+  function getAllAreas() public view returns (string);
+
+  function isManager(address manager) public view returns (bool);
+
+  function isAreaAvailable(string area) public view returns (bool);
+
+  function getResourceFromArea(string area, uint256 resourcePosition)
+    public view returns (address, string, bool);
+
 }
